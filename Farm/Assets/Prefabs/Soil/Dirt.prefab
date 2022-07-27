@@ -111,3 +111,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _seedData: {fileID: 1365086761155872332, guid: 80b2e0a3995b09d4ebb2bd7d56d1bbf7, type: 3}
+  _seedTypeIndex: 0
+  _seedType: {fileID: 0}
+  mySlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
