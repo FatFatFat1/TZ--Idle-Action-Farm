@@ -11,4 +11,6 @@ public class SoilLife : MonoBehaviour
     {
         MySoilSlots = MySoil.GetComponent<Soil>().MySlots;
     }
+
+
 }
