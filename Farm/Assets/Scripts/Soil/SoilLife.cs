@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoilLife : MonoBehaviour
 {
     public Seed[] MySoilSlots;
+    private float _seconds;
 
     private void Awake()
     {
@@ -12,6 +13,7 @@ public class SoilLife : MonoBehaviour
         for (int i = 0; i < MySoilSlots.Length; i++)
         {
             MySoilSlots[i].EndGrowPositon = MySoilSlots[i].transform.position + MySoilSlots[i].EndGrowPositon;
+            MySoilSlots[i].Distance = Vector3.Distance(MySoilSlots[i].transform.position, MySoilSlots[i].EndGrowPositon);
         }
     }
 
@@ -21,7 +23,9 @@ public class SoilLife : MonoBehaviour
         {
             if (!MySoilSlots[i].isMature)
             {
-                MySoilSlots[i].Grow(MySoilSlots[i].TimeOfGrow, MySoilSlots[i].EndGrowPositon);
+                _seconds = MySoilSlots[i].Distance / MySoilSlots[i].TimeOfGrow;
+                Debug.Log(_seconds);
+                MySoilSlots[i].Grow(_seconds, MySoilSlots[i].EndGrowPositon);
             }
         }
     }

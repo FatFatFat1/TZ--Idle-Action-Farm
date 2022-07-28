@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Wheat
   _timeOfGrow: 10
-  _isMature: 0
-  EndGrowPositon: {x: 0, y: 1.5, z: 0}
+  isMature: 0
+  EndGrowPositon: {x: 0, y: 1.4, z: 0}
 --- !u!1001 &6037694841581455180
 PrefabInstance:
   m_ObjectHideFlags: 0
