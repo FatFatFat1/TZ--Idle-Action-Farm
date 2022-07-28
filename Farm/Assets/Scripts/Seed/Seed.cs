@@ -5,12 +5,26 @@ using UnityEngine;
 public class Seed : MonoBehaviour
 {
     [SerializeField] private string _name;
-    [SerializeField] private int _stateOfGrow;
-    [SerializeField] private int _maxStateOfGrow;
-    [SerializeField] private int _timeOfGrow;
-
+    [SerializeField] private float _timeOfGrow;
     public string Name => _name;
-    public int StateOfGrow => _stateOfGrow; // “екуща€ стади€ роста
-    public int MaxStateOfGrow => _maxStateOfGrow; // “екуща€ стади€ роста
-    public int TimeOfGrow => _timeOfGrow; // ¬рем€ за которое растение достигает финальной стадии роста
+
+    public bool isMature;
+    public float TimeOfGrow => _timeOfGrow; // ¬рем€ за которое растение достигает финальной стадии роста
+
+    public Vector3 EndGrowPositon;
+
+    public void Grow(float time , Vector3 endPos)
+    {
+        Vector3 speed = Vector3.up * (time * 0.001f);
+        if (transform.position == endPos)
+        {
+            transform.Translate(-speed);
+            isMature = true;
+        }
+        if (transform.position != endPos)
+        {
+            transform.Translate(speed);
+        }
+
+    }
 }

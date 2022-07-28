@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class SoilLife : MonoBehaviour
 {
-    public GameObject MySoil;
     public Seed[] MySoilSlots;
 
     private void Awake()
     {
-        MySoilSlots = MySoil.GetComponent<Soil>().MySlots;
+        MySoilSlots = GetComponent<Soil>().MySlots;
+        for (int i = 0; i < MySoilSlots.Length; i++)
+        {
+            MySoilSlots[i].EndGrowPositon = MySoilSlots[i].transform.position + MySoilSlots[i].EndGrowPositon;
+        }
     }
 
+    private void FixedUpdate()
+    {
+        for (int i = 0; i < MySoilSlots.Length; i++)
+        {
+            if (!MySoilSlots[i].isMature)
+            {
+                MySoilSlots[i].Grow(MySoilSlots[i].TimeOfGrow, MySoilSlots[i].EndGrowPositon);
+            }
+        }
+    }
 
 }

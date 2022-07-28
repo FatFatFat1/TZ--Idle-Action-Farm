@@ -16,7 +16,7 @@ public class Soil : MonoBehaviour
     {
         sData = _seedData.GetComponent<SeedData>();
         GetMySeedType(); //¬ тз не написано про то, можно ли на одной гр€дке, выращивать несколько видов растений. “ак что, в одной гр€дке только один вид растений.
-        _position = new Vector3(transform.position.x - 0.3f, transform.position.y + 0.5f, transform.position.z - 0.3f);
+        _position = new Vector3(transform.position.x - 0.3f, transform.position.y - 1f, transform.position.z - 0.3f);
         PlaceSeed(mySlots, _seedType, _position);
     }
 
