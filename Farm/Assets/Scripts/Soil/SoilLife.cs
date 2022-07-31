@@ -24,7 +24,6 @@ public class SoilLife : MonoBehaviour
             if (!MySoilSlots[i].isMature)
             {
                 _seconds = MySoilSlots[i].Distance / MySoilSlots[i].TimeOfGrow;
-                Debug.Log(_seconds);
                 MySoilSlots[i].Grow(_seconds, MySoilSlots[i].EndGrowPositon);
             }
         }
