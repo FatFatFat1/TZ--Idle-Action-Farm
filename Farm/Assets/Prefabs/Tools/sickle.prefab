@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1212479112466232340}
   - component: {fileID: 3773097736585019181}
   - component: {fileID: 4497009286782130506}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Slicer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422167511951054821}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.022, y: 0, z: 0.517}
-  m_LocalScale: {x: 0.027846338, y: 1, z: 0.031949796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.139, y: 0, z: 0.504}
+  m_LocalScale: {x: 0.047476288, y: 1, z: 0.028214594}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 89764537152457536}
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee5ac517e6a8ab4ca50bac06fbb7edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialAfterSlice: {fileID: 0}
+  materialAfterSlice: {fileID: 2100000, guid: a9fd28031eb8e3547a25d50ecc9b83c7, type: 2}
   sliceMask:
     serializedVersion: 2
     m_Bits: 64
@@ -82,7 +82,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 89764537152457536}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: sickle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,6 +176,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 53416b54684b2d448960474a8b841678, type: 3}
       propertyPath: m_Name
       value: sickle
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 53416b54684b2d448960474a8b841678, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3451118302482216456, guid: 53416b54684b2d448960474a8b841678, type: 3}
