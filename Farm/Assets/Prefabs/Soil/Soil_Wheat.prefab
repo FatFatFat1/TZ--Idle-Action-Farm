@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7374703784773319040}
   - component: {fileID: 8122317373257875617}
   m_Layer: 0
-  m_Name: Dirt
+  m_Name: Soil_Wheat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102cf9d0468f4cf46967618057198daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MySoil: {fileID: 0}
   MySoilSlots: []
 --- !u!114 &8122317373257875617
 MonoBehaviour:
@@ -125,9 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323854248eef1df4ea0b491ca8f894c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _seedData: {fileID: 1365086761155872332, guid: 80b2e0a3995b09d4ebb2bd7d56d1bbf7, type: 3}
-  _seedTypeIndex: 0
-  _seedType: {fileID: 0}
+  _mySeed: {fileID: 5059699854391444011, guid: 789af4ab3248e3848966be2e852ab0aa, type: 3}
   mySlots:
   - {fileID: 0}
   - {fileID: 0}

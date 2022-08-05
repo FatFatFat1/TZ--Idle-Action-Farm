@@ -17,16 +17,15 @@ public class Slicer : MonoBehaviour
             foreach (Collider objectToBeSliced in objectsToBeSliced)
             {
                 SlicedHull slicedObject = SliceObject(objectToBeSliced.gameObject, materialAfterSlice);
-
                 GameObject upperHullGameobject = slicedObject.CreateUpperHull(objectToBeSliced.gameObject, materialAfterSlice);
                 GameObject lowerHullGameobject = slicedObject.CreateLowerHull(objectToBeSliced.gameObject, materialAfterSlice);
 
                 upperHullGameobject.transform.position = objectToBeSliced.transform.position;
                 lowerHullGameobject.transform.position = objectToBeSliced.transform.position;
-
+                upperHullGameobject.AddComponent<Harvest>().MyHarvest = objectToBeSliced.gameObject.GetComponent<Seed>().MyHarvest;
+                lowerHullGameobject.AddComponent<LowerPartDestroy>();
                 MakeItPhysical(upperHullGameobject);
                 MakeItPhysical(lowerHullGameobject);
-
                 Destroy(objectToBeSliced.gameObject);
             }
         }
