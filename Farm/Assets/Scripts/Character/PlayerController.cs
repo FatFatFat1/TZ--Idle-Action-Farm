@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
         _animator = gameObject.GetComponent<Animator>(); ;
         controller.height = 0;
         controller.center = new Vector3(0, 0.5f, 0);
+        controller.stepOffset = 0;
     }
 
     void FixedUpdate()

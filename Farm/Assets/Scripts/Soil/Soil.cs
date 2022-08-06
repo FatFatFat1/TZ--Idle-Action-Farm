@@ -16,7 +16,11 @@ public class Soil : MonoBehaviour
     {
         _myType = MySeed.GetComponent<Seed>();
         _position = new Vector3(transform.position.x - 0.3f, transform.position.y - 1f, transform.position.z - 0.3f);
-        PlaceSeed(mySlots, _myType, _position);
+        if(_myType != null)
+        {
+            PlaceSeed(mySlots, _myType, _position);
+        }
+        
     }
 
     private void PlaceSeed(Seed[] Slots, Seed seedType, Vector3 pos)

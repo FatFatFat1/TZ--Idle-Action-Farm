@@ -27,5 +27,9 @@ public class Seed : MonoBehaviour
             transform.Translate(-speed);
             isMature = true;
         }
+        if(isMature == true)
+        {
+            gameObject.layer = LayerMask.NameToLayer("Slisable");
+        }
     }
 }

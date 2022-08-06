@@ -22,7 +22,7 @@ public class Slicer : MonoBehaviour
 
                 upperHullGameobject.transform.position = objectToBeSliced.transform.position;
                 lowerHullGameobject.transform.position = objectToBeSliced.transform.position;
-                upperHullGameobject.AddComponent<Harvest>().MyHarvest = objectToBeSliced.gameObject.GetComponent<Seed>().MyHarvest;
+                upperHullGameobject.AddComponent<SeedDestroy>().MyHarvest = objectToBeSliced.gameObject.GetComponent<Seed>().MyHarvest;
                 lowerHullGameobject.AddComponent<LowerPartDestroy>();
                 MakeItPhysical(upperHullGameobject);
                 MakeItPhysical(lowerHullGameobject);

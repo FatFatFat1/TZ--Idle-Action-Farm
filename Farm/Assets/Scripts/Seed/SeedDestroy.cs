@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Harvest : MonoBehaviour
+public class SeedDestroy : MonoBehaviour
 {
     public GameObject MyHarvest;
     void Start()
