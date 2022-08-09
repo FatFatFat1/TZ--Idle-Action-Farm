@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Storehouse : MonoBehaviour
+public class Unloading : MonoBehaviour
 {
+    [SerializeField] private int _maxBlock;
+    public int MaxBlock => _maxBlock;
+    public GameObject[] MyStore;
     private Backpack _myBackPack;
     private Vector3 _currentPos;
     private int _currentStep;
@@ -26,7 +29,6 @@ public class Storehouse : MonoBehaviour
                     _currentPos += new Vector3(+0.25f, 0, -0);
                     if (_currentStep % 10 == 0)
                     {
-                        Debug.Log("Новая строка");
                         _currentPos += new Vector3(-2.5f, 0, +0.25f);
                     }
                     _currentStep++;
@@ -40,6 +42,17 @@ public class Storehouse : MonoBehaviour
         block.transform.parent = null;
         myBack.myHarvest[i] = null;
         block.transform.position = _currentPos;
+        MyStore[_currentStep - 1] = block;
         myBack.CurrentBlock--;
+    }
+    public void Reset()
+    {
+        _currentPos = transform.position + new Vector3(-2, 0.25f, -0.5f);
+        _currentStep = 1;
+        for (int i = 0; i < MyStore.Length; i++)
+        {
+            Destroy(MyStore[i]);
+            MyStore[i] = null;
+        }
     }
 }
