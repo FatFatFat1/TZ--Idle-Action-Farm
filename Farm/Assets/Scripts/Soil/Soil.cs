@@ -28,7 +28,6 @@ public class Soil : MonoBehaviour
         for (int i = 0; i < Slots.Length; i++)
         {
             Slots[i] = Instantiate(seedType, pos, Quaternion.identity);
-            //Slots[i].transform.Rotate(-90, 0, 0);
             pos = new Vector3(pos.x + 0.3f, pos.y, pos.z);
             if ((i + 1) % 3 == 0)
             {

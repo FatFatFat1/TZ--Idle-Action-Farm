@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System;
 public class Sale : MonoBehaviour
 {
     [SerializeField] private GameObject _myCoin;
@@ -34,13 +34,12 @@ public class Sale : MonoBehaviour
                 {
                     if (_myStore.MyStore[i] != null)
                     {
+                        int oldScore = score;
                         score += _myStore.MyStore[i].GetComponent<Harvest>().Cost;
                         Vector3 coinPos = new Vector3(_myStore.MyStore[i].transform.position.x, _myStore.MyStore[i].transform.position.y + 0.5f, _myStore.MyStore[i].transform.position.z);
-                        GameObject coin = Instantiate(MyCoin , coinPos, Quaternion.identity);
-                        coin.GetComponent<Coin>().StartCoinMove(coinPos , () => 
-                        {
-                            _text.text = "Money:"+score+"$";
-                        });
+                        GameObject coin = Instantiate(MyCoin, coinPos, Quaternion.identity);
+                        Action endAction = () => MyScore.GetComponent<ScoreUpdate>().StartAddScore(oldScore, score, _text);
+                        coin.GetComponent<Coin>().StartCoinMove(coinPos , endAction);
                     }
                 }
                 _myStore.Reset();

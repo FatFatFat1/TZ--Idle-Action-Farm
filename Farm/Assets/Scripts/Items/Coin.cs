@@ -16,12 +16,12 @@ public class Coin : MonoBehaviour
         _target = GameObject.FindGameObjectWithTag("MoneyCount").transform;
     }
 
-    public void StartCoinMove(Vector3 _initial , Action onComplete)
+    public void StartCoinMove(Vector3 _initial, Action onEnd)
     {
         Vector3 targetPos = Camera.main.ScreenToWorldPoint(new Vector3(_target.position.x, _target.position.y, Camera.main.transform.position.z * -1));
-        StartCoroutine(MoveCoin(transform, _initial, targetPos , onComplete));
+        StartCoroutine(MoveCoin(transform, _initial, targetPos, onEnd));
     }
-    IEnumerator MoveCoin(Transform obj, Vector3 startPos, Vector3 endPos , Action onComplete)
+    IEnumerator MoveCoin(Transform obj, Vector3 startPos, Vector3 endPos , Action onEnd)
     {
         float time = 0;
         while (time < 1)
@@ -30,7 +30,7 @@ public class Coin : MonoBehaviour
             obj.position = Vector3.Lerp(startPos, endPos, time);
             yield return new WaitForEndOfFrame();
         }
-        onComplete.Invoke();
+        onEnd.Invoke();
         Destroy(gameObject);
     }
 
