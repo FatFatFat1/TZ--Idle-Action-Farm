@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Backpack : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Backpack : MonoBehaviour
     public int CurrentBlock = 0;
     public int MaxSlots => _maxSlots;
     public GameObject MySpine;
+    public GameObject myText;
     public GameObject[] myHarvest;
 
     public void TryStorage(GameObject block)
@@ -24,6 +26,7 @@ public class Backpack : MonoBehaviour
             myHarvest[CurrentBlock].transform.localPosition = Vector3.zero;
             myHarvest[CurrentBlock].transform.localPosition += new Vector3(0,0.25f * CurrentBlock, -0.25f);
             myHarvest[CurrentBlock].GetComponent<Rigidbody>().isKinematic = true;
+            myText.GetComponent<TMP_Text>().text = (CurrentBlock+1) + "/"+ (MaxSlots+1);
         }
         if (CurrentBlock > MaxSlots)
         {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Unloading : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class Unloading : MonoBehaviour
         StartCoroutine(BlockFly(block, block.transform.position, _currentPos));
         MyStore[_currentStep - 1] = block;
         myBack.CurrentBlock--;
+        myBack.myText.GetComponent<TMP_Text>().text = myBack.CurrentBlock + "/" + (myBack.MaxSlots + 1);
     }
 
     IEnumerator BlockFly(GameObject block, Vector3 startPos, Vector3 endPos)
