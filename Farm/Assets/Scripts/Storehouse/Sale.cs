@@ -5,23 +5,24 @@ using UnityEngine.UI;
 
 public class Sale : MonoBehaviour
 {
+    [SerializeField] private GameObject _myCoin;
+    public GameObject MyCoin => _myCoin;
     public GameObject MyTimer;
     public GameObject MyScore;
     private Image _myImage;
-    private Text _myText;
     private Unloading _myStore;
+    private Text _text;
     private int score;
 
     private void Awake()
     {
         _myImage = MyTimer.GetComponent<Image>();
-        _myText = MyScore.GetComponent<Text>();
         _myStore = GetComponent<Unloading>();
-        StartCoroutine(Saling(MyTimer));
+        _text = MyScore.GetComponent<Text>();
+        StartCoroutine(Saling());
         score = 0;
     }
-
-    IEnumerator Saling(GameObject myHarvest)
+    IEnumerator Saling()
     {
         while (true)
         {
@@ -34,10 +35,15 @@ public class Sale : MonoBehaviour
                     if (_myStore.MyStore[i] != null)
                     {
                         score += _myStore.MyStore[i].GetComponent<Harvest>().Cost;
+                        Vector3 coinPos = new Vector3(_myStore.MyStore[i].transform.position.x, _myStore.MyStore[i].transform.position.y + 0.5f, _myStore.MyStore[i].transform.position.z);
+                        GameObject coin = Instantiate(MyCoin , coinPos, Quaternion.identity);
+                        coin.GetComponent<Coin>().StartCoinMove(coinPos , () => 
+                        {
+                            _text.text = "Money:"+score+"$";
+                        });
                     }
                 }
                 _myStore.Reset();
-                _myText.text = "Money:" + score + "$";
             }
             else
             {

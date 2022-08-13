@@ -187,7 +187,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5091743, y: 1}
+    m_SensorSize: {x: 1.7135416, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -812,8 +812,9 @@ GameObject:
   - component: {fileID: 932972264}
   - component: {fileID: 932972263}
   - component: {fileID: 932972261}
+  - component: {fileID: 932972265}
   m_Layer: 0
-  m_Name: Scope-Timer
+  m_Name: Score-Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -864,19 +865,31 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932972260}
-  m_LocalRotation: {x: -0.8947552, y: 0, z: 0, w: 0.44655704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -4.47}
   m_LocalScale: {x: 1, y: -1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1231679706}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -126.954, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -493.14, y: -207.19}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &932972265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932972260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b42cf8995a9114590669beff485974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,6 +1548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0801d13600fd7aa499ca416fd48e085b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _myCoin: {fileID: 3846598910867698995, guid: 9882a9a6282e91644a0a16178dcb6769, type: 3}
   MyTimer: {fileID: 932972260}
   MyScore: {fileID: 1871235252}
 --- !u!1 &1539632144
@@ -1746,7 +1760,7 @@ GameObject:
   - component: {fileID: 1871235254}
   m_Layer: 5
   m_Name: Score-Text
-  m_TagString: Untagged
+  m_TagString: MoneyCount
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
