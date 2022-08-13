@@ -41,9 +41,20 @@ public class Unloading : MonoBehaviour
     {
         block.transform.parent = null;
         myBack.myHarvest[i] = null;
-        block.transform.position = _currentPos;
+        StartCoroutine(BlockFly(block, block.transform.position, _currentPos));
         MyStore[_currentStep - 1] = block;
         myBack.CurrentBlock--;
+    }
+
+    IEnumerator BlockFly(GameObject block, Vector3 startPos, Vector3 endPos)
+    {
+        float time = 0;
+        while (time < 1)
+        {
+            time += 1 * Time.deltaTime;
+            block.transform.position = Vector3.Lerp(startPos, endPos, time);
+            yield return new WaitForEndOfFrame();
+        }
     }
     public void Reset()
     {
