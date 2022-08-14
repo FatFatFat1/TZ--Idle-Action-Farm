@@ -7,7 +7,7 @@ public class SoilLife : MonoBehaviour
     public Seed[] MySoilSlots;
     private float _seconds;
 
-    private void Awake()
+    private void Start()
     {
         MySoilSlots = GetComponent<Soil>().MySlots;
         for (int i = 0; i < MySoilSlots.Length; i++)
